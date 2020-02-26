@@ -26,7 +26,7 @@ class LRUCache:
     def get(self, key):
         if key in self.fast_access:
             val = self.fast_access[key]
-            self.storage.move_to_front(val)
+            self.storage.move_to_front(self.storage.tail)
             return val
         else:
             return None
